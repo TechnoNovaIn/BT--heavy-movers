@@ -1,0 +1,298 @@
+/* ============================================================
+   Careers.css
+   Every selector here starts with .careersParentNode — the wrapper
+   rendered by pages/careers/index.js and pages/careers/[slug].js.
+   Nothing in this file affects any Home section.
+   ============================================================ */
+
+.careersParentNode {
+  background: var(--bms-cream);
+  min-height: 100vh;
+}
+
+/* ---------- hero / page header banner ---------- */
+
+.careersParentNode .careersBanner {
+  background: linear-gradient(135deg, var(--bms-navy) 0%, var(--bms-navy-deep) 100%);
+  padding: 160px 24px 70px;
+  text-align: center;
+}
+
+.careersParentNode .careersBanner__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #c7d3de;
+  font-size: 0.88rem;
+  margin-bottom: 22px;
+  transition: color 0.2s ease;
+}
+
+.careersParentNode .careersBanner__back:hover {
+  color: var(--bms-yellow);
+}
+
+.careersParentNode .careersBanner .sectionEyebrow--center {
+  color: var(--bms-yellow);
+}
+
+.careersParentNode .careersBanner .sectionTitle--center {
+  color: var(--bms-white);
+  margin-bottom: 14px;
+}
+
+.careersParentNode .careersBanner .sectionTitle--center span {
+  color: var(--bms-orange-light);
+}
+
+.careersParentNode .careersBanner__intro {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #d7e0e8;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ---------- listing grid ---------- */
+
+.careersParentNode .careersList {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.careersParentNode .careerCard {
+  background: var(--bms-white);
+  border: 1px solid rgba(11, 31, 51, 0.08);
+  border-radius: var(--radius-md);
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.careersParentNode .careerCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+
+.careersParentNode .careerCard h3 {
+  font-family: var(--font-display);
+  color: var(--bms-navy);
+  font-size: 1.2rem;
+  margin: 0 0 12px;
+}
+
+.careersParentNode .careerCard p {
+  color: var(--bms-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+
+.careersParentNode .careerCard .btn {
+  align-self: flex-start;
+}
+
+/* ---------- detail page ---------- */
+
+.careersParentNode .careersDetail {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 70px 24px 110px;
+}
+
+.careersParentNode .careersDetail__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--bms-navy);
+  margin: 0 0 12px;
+}
+
+.careersParentNode .careersDetail__summary {
+  color: var(--bms-muted);
+  line-height: 1.7;
+  font-size: 1.02rem;
+  margin: 0 0 44px;
+  max-width: 620px;
+}
+
+.careersParentNode .detailBlock {
+  background: var(--bms-white);
+  border: 1px solid rgba(11, 31, 51, 0.08);
+  border-radius: var(--radius-md);
+  padding: 30px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+.careersParentNode .detailBlock h2 {
+  font-family: var(--font-display);
+  color: var(--bms-navy);
+  font-size: 1.1rem;
+  margin: 0 0 20px;
+}
+
+.careersParentNode .requirementsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 28px;
+}
+
+.careersParentNode .requirementsGrid__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.careersParentNode .requirementsGrid__label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bms-orange);
+}
+
+.careersParentNode .requirementsGrid__value {
+  color: var(--bms-ink);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.careersParentNode .documentsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.careersParentNode .documentsList li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--bms-ink);
+  font-size: 0.94rem;
+}
+
+.careersParentNode .documentsList li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bms-orange);
+  flex: none;
+  transform: translateY(-2px);
+}
+
+.careersParentNode .workLocation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.careersParentNode .workLocation__label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bms-orange);
+}
+
+.careersParentNode .workLocation__value {
+  color: var(--bms-ink);
+  font-size: 0.98rem;
+}
+
+.careersParentNode .applyBlock {
+  background: var(--bms-navy);
+  color: var(--bms-white);
+}
+
+.careersParentNode .applyBlock h2 {
+  color: var(--bms-white);
+}
+
+.careersParentNode .applyBlock p {
+  color: #d7e0e8;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  font-size: 0.94rem;
+}
+
+.careersParentNode .applyBlock__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  color:blue;
+}
+
+.careersParentNode .applyBlock__actions a{
+  color: var(--bms-white);
+}
+
+.careersParentNode .applyBlock__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.88rem;
+  color: #c7d3de;
+}
+
+.careersParentNode .applyBlock__meta a {
+  color: #c7d3de;
+}
+
+.careersParentNode .applyBlock__meta a:hover {
+  color: var(--bms-yellow);
+}
+
+.careersParentNode .careersDetail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bms-orange);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.careersParentNode .careersDetail__back:hover {
+  color: var(--bms-navy);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 992px) {
+  .careersParentNode .careersList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .careersParentNode .careersBanner {
+    padding: 130px 20px 56px;
+  }
+
+  .careersParentNode .careersList {
+    grid-template-columns: 1fr;
+    padding: 50px 20px 80px;
+  }
+
+  .careersParentNode .careersDetail {
+    padding: 50px 20px 80px;
+  }
+
+  .careersParentNode .detailBlock {
+    padding: 24px 22px;
+  }
+
+  .careersParentNode .requirementsGrid {
+    grid-template-columns: 1fr;
+  }
+}

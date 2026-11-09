@@ -1,0 +1,90 @@
+/* ============================================================
+   Specifications.css
+   Every selector here starts with .specificationsParentNode — that's
+   the <section id="specifications"> rendered by
+   components/Home/sections/Specifications.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.specificationsParentNode {
+  padding: 100px 24px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.specificationsParentNode .specifications__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 50px;
+  align-items: start;
+}
+
+.specificationsParentNode .specifications__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.specificationsParentNode .specifications__list li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.specificationsParentNode .specifications__marker {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bms-orange);
+  min-width: 34px;
+}
+
+.specificationsParentNode .specifications__list span:last-child {
+  color: var(--bms-muted);
+  line-height: 1.7;
+}
+
+.specificationsParentNode .specifications__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.specificationsParentNode .specifications__image {
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s ease;
+}
+
+.specificationsParentNode .specifications__image:hover {
+  transform: translateY(-6px);
+}
+
+.specificationsParentNode .specifications__image--0 {
+  grid-column: 1 / 3;
+  height: 220px;
+}
+
+.specificationsParentNode .specifications__image--1,
+.specificationsParentNode .specifications__image--2 {
+  height: 200px;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 992px) {
+  .specificationsParentNode .specifications__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .specificationsParentNode .specifications__image--0 {
+    grid-column: 1 / 3;
+  }
+}

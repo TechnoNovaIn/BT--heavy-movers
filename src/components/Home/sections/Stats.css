@@ -1,0 +1,69 @@
+/* ============================================================
+   Stats.css
+   Every selector here starts with .statsParentNode — that's the
+   <section> rendered by components/Home/sections/Stats.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.statsParentNode {
+  background: var(--bms-navy-deep);
+  padding: 60px 24px;
+}
+
+.statsParentNode .statsGrid {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.statsParentNode .statCard {
+  text-align: center;
+  padding: 18px 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statsParentNode .statCard:last-child {
+  border-right: none;
+}
+
+.statsParentNode .statCard__number {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  color: var(--bms-yellow);
+  margin-bottom: 6px;
+}
+
+.statsParentNode .statCard__label {
+  display: block;
+  color: #c7d3de;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 992px) {
+  .statsParentNode .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .statsParentNode .statCard:nth-child(3) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsParentNode .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statsParentNode .statCard {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}

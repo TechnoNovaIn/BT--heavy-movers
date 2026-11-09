@@ -1,0 +1,124 @@
+/* ============================================================
+   Home.css
+   This file is ONLY for things shared by more than one section:
+   the page background, section title/eyebrow styles, buttons,
+   and the scroll-reveal animation. It does NOT contain any single
+   section's own layout — every section has its own CSS file now:
+
+     Navbar.css          -> .navbarParentNode
+     Hero.css             -> .heroParentNode
+     sections/About.css   -> .aboutParentNode
+     sections/Stats.css   -> .statsParentNode
+     sections/Specifications.css -> .specificationsParentNode
+     sections/Advantages.css     -> .advantagesParentNode
+     sections/Gallery.css        -> .galleryParentNode
+     sections/Certifications.css -> .certificationsParentNode
+     sections/Letter.css         -> .letterParentNode
+     sections/Team.css           -> .teamParentNode
+     sections/Contact.css        -> .contactParentNode
+     sections/Footer.css         -> .footerParentNode
+     sections/Lightbox.css       -> .lightboxParentNode
+
+   This file (Home.css) is scoped under .homeParentNode, which is
+   the single wrapper div around the whole page in Home.js.
+   ============================================================ */
+
+.homeParentNode {
+  overflow-x: hidden;
+  background: var(--bms-cream);
+}
+
+/* ---------- shared building blocks ---------- */
+/* Used by many sections, so they live here instead of being
+   copy-pasted into every section's own CSS file. */
+
+.homeParentNode .sectionEyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--bms-orange);
+  margin: 0 0 10px;
+}
+
+.homeParentNode .sectionEyebrow--center {
+  display: block;
+  text-align: center;
+}
+
+.homeParentNode .sectionTitle {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--bms-navy);
+  margin: 0 0 20px;
+}
+
+.homeParentNode .sectionTitle span {
+  color: var(--bms-orange);
+}
+
+.homeParentNode .sectionTitle--center {
+  text-align: center;
+}
+
+.homeParentNode .sectionTitle--onDark {
+  color: var(--bms-white);
+}
+
+.homeParentNode .sectionTitle--onDark span {
+  color: var(--bms-yellow);
+}
+
+.homeParentNode .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.homeParentNode .btn--primary {
+  background: linear-gradient(135deg, var(--bms-orange), var(--bms-orange-light));
+  color: var(--bms-white);
+  box-shadow: 0 12px 24px rgba(232, 98, 44, 0.35);
+}
+
+.homeParentNode .btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(232, 98, 44, 0.45);
+}
+
+.homeParentNode .btn--ghost {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: var(--bms-white);
+}
+
+.homeParentNode .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+/* scroll-reveal utility — used by the <Reveal> component, which
+   every section uses to fade content in. See Reveal.js. */
+.homeParentNode .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.homeParentNode .reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}

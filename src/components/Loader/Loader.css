@@ -1,0 +1,101 @@
+/* ============================================================
+   Loader.css — scoped to .loaderParentNode and its children only
+   ============================================================ */
+
+.loaderParentNode {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: radial-gradient(circle at 50% 30%, #10283f 0%, #071624 70%);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loaderParentNode--leaving {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loaderParentNode__mark {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderParentNode__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--bms-orange);
+  border-right-color: var(--bms-yellow);
+  animation: loaderSpin 1.1s linear infinite;
+}
+
+.loaderParentNode__ring--delay {
+  inset: 12px;
+  border-top-color: var(--bms-yellow);
+  border-right-color: transparent;
+  animation-duration: 0.8s;
+  animation-direction: reverse;
+  opacity: 0.7;
+}
+
+.loaderParentNode__logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--bms-cream);
+}
+
+.loaderParentNode__tagline {
+  margin: 0;
+  color: #c7d3de;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.loaderParentNode__track {
+  width: 180px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.loaderParentNode__bar {
+  display: block;
+  height: 100%;
+  width: 40%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--bms-orange), var(--bms-yellow));
+  animation: loaderBar 1s ease-in-out infinite;
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderBar {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}

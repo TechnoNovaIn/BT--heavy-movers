@@ -1,0 +1,47 @@
+/* ============================================================
+   Lightbox.css
+   Every selector here starts with .lightboxParentNode — that's the
+   full-screen image preview popup rendered by
+   components/Home/sections/Lightbox.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.lightboxParentNode {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(7, 22, 36, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  animation: lightboxIn 0.25s ease;
+}
+
+.lightboxParentNode img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-strong);
+}
+
+.lightboxParentNode .lightbox__close {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: var(--bms-white);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

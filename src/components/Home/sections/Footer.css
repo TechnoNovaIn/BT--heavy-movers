@@ -1,0 +1,51 @@
+/* ============================================================
+   Footer.css
+   Every selector here starts with .footerParentNode — that's the
+   <footer> rendered by components/Home/sections/Footer.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.footerParentNode {
+  background: var(--bms-navy-deep);
+  padding: 50px 24px 30px;
+  color: #c7d3de;
+}
+
+.footerParentNode .footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.footerParentNode .footer__brand img {
+  height: 32px;
+  margin: 0 auto 10px;
+  filter: brightness(0) invert(1);
+}
+
+.footerParentNode .footer__brand p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.footerParentNode .footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  font-size: 0.85rem;
+}
+
+.footerParentNode .footer__links a:hover {
+  color: var(--bms-yellow);
+}
+
+.footerParentNode .footer__copy {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #7d8ea0;
+}

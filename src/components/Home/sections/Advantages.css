@@ -1,0 +1,65 @@
+/* ============================================================
+   Advantages.css
+   Every selector here starts with .advantagesParentNode — that's
+   the <section id="advantages"> rendered by
+   components/Home/sections/Advantages.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.advantagesParentNode {
+  background: var(--bms-cream);
+  padding: 100px 24px;
+  position: relative;
+}
+
+.advantagesParentNode .advantages__grid {
+  max-width: var(--container-max);
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.advantagesParentNode .advantageCard {
+  background: var(--bms-white);
+  border-radius: var(--radius-md);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--bms-orange);
+}
+
+.advantagesParentNode .advantageCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+}
+
+.advantagesParentNode .advantageCard__index {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: rgba(232, 98, 44, 0.25);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.advantagesParentNode .advantageCard p {
+  margin: 0;
+  color: var(--bms-ink);
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 992px) {
+  .advantagesParentNode .advantages__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .advantagesParentNode .advantages__grid {
+    grid-template-columns: 1fr;
+  }
+}

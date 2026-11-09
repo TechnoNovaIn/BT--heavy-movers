@@ -1,0 +1,75 @@
+/* ============================================================
+   Gallery.css
+   Every selector here starts with .galleryParentNode — that's the
+   <section id="gallery"> rendered by components/Home/sections/Gallery.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.galleryParentNode {
+  padding: 100px 24px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.galleryParentNode .gallery__grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.galleryParentNode .gallery__item {
+  position: relative;
+  border: none;
+  padding: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-soft);
+}
+
+.galleryParentNode .gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.galleryParentNode .gallery__item:hover img {
+  transform: scale(1.12);
+}
+
+.galleryParentNode .gallery__zoom {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 22, 36, 0.45);
+  color: var(--bms-white);
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galleryParentNode .gallery__item:hover .gallery__zoom {
+  opacity: 1;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 992px) {
+  .galleryParentNode .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryParentNode .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+}

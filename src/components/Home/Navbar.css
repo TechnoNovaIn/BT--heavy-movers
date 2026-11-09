@@ -1,0 +1,167 @@
+/* ============================================================
+   Navbar.css
+   Every selector here starts with .navbarParentNode — that's the
+   <header> element rendered by components/Home/sections/Navbar.js.
+   Nothing in this file affects any other section.
+   ============================================================ */
+
+.navbarParentNode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background: transparent;
+  transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease;
+  padding: 18px 0;
+}
+
+.navbarParentNode--scrolled {
+  background: rgba(7, 22, 36, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(7, 22, 36, 0.25);
+  padding: 10px 0;
+}
+
+.navbarParentNode__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.navbarParentNode__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--bms-white);
+}
+
+.navbarParentNode__emblem {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.navbarParentNode__brandText {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 1.05rem;
+  line-height: 1.1;
+}
+
+.navbarParentNode__brandText small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: 0.62rem;
+  color: #c7d3de;
+  text-transform: none;
+}
+
+.navbarParentNode__links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.navbarParentNode__link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #e7edf2;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbarParentNode__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--bms-orange);
+  transition: width 0.25s ease;
+}
+
+.navbarParentNode__link:hover::after {
+  width: 100%;
+}
+
+.navbarParentNode__cta {
+  background: var(--bms-orange);
+  color: var(--bms-white);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.navbarParentNode__cta:hover {
+  background: var(--bms-orange-light);
+  transform: translateY(-2px);
+}
+
+.navbarParentNode__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+}
+
+.navbarParentNode__toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--bms-white);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbarParentNode__toggle--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbarParentNode__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbarParentNode__toggle--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- responsive (mobile slide-out menu) ---------- */
+
+@media (max-width: 768px) {
+  .navbarParentNode__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(78vw, 320px);
+    background: var(--bms-navy-deep);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 26px;
+    padding: 40px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+  }
+
+  .navbarParentNode__links--open {
+    transform: translateX(0);
+  }
+
+  .navbarParentNode__toggle {
+    display: flex;
+    z-index: 501;
+  }
+}
